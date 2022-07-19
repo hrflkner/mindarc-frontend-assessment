@@ -151,12 +151,14 @@ export default function TabIndex() {
                 <div className="tab__navbar">
                     {providedData.map((entry) => {
                         return (
-                            <button
+                            <motion.button
                                 onClick={(e) => handleTabChange(e)}
                                 value={entry.title}
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
                             >
                                 {entry.title}
-                            </button>
+                            </motion.button>
                         );
                     })}
                 </div>
