@@ -13,7 +13,7 @@ Both are available at the same Firebase site.
 
 `('b' + 'a' + + 'a' + 'a').toLowerCase()` is `banana` due to a parsing error. Those double plus causes the second plus to be treated as a unary operator. Since 'a' is not a number, the unary operation return NaN for not a number.
 
-## Framerwork and Packages:
+## Framework and Packages:
 
 create-react-app with TypeScript
 
