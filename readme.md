@@ -16,3 +16,6 @@ create-react-app with TypeScript
 
 -   styled-components
 -   framer-motion
+-   firebase
+    * hosting
+    * automated redeploys w/ Github Actions (Redeploys on 'git push' to remote)
