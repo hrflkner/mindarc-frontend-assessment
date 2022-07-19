@@ -1,8 +1,11 @@
-# Layout Challenge (Task 1)
+# Frontend Assessment
+
+## Layout Design - Task 1
 
 The design was copied and a live demo is available on firebase here:
+https://mindarc-frontend-challenge.firebaseapp.com/
 
-## Tab Index and Accordion Task 2
+## Tab Index and Accordion - Task 2
 
 Both are available at the same Firebase site.
 
@@ -16,3 +19,6 @@ create-react-app with TypeScript
 
 -   styled-components
 -   framer-motion
+-   firebase
+    * hosting
+    * automated redeploys w/ Github Actions (Redeploys on 'git push' to remote)
