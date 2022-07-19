@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// Components
+import DesktopBanner from './components/DesktopBanner';
+import MobileBanner from './/components/MobileBanner';
+import MainCardCollection from './components/MainCards';
+import TabIndex from './components/TabIndex';
+import Accordion from './components/Accordion';
+
+// Custom Hooks
+import { useWindowSize } from './hooks/useWindowSize';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const deviceWidth = useWindowSize()[1];
+
+    return (
+        <div className="App">
+            {deviceWidth > 525 ? <DesktopBanner /> : <MobileBanner />}
+            <MainCardCollection />
+            {deviceWidth > 525 ? <TabIndex /> : <Accordion />}
+        </div>
+    );
 }
 
 export default App;
