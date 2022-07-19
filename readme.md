@@ -1,6 +1,7 @@
 # Layout Challenge (Task 1)
 
 The design was copied and a live demo is available on firebase here:
+https://mindarc-frontend-challenge.firebaseapp.com/
 
 ## Tab Index and Accordion Task 2
 
