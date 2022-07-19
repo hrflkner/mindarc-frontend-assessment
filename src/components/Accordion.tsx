@@ -66,7 +66,6 @@ const StyledAccordion = styled.section`
         font-family: 'Oswald', sans-serif;
     }
     .dangerous__content {
-        height: 60%;
         margin: 1rem auto 0;
         padding: 2rem;
 
@@ -123,9 +122,16 @@ export default function Accordion2() {
                         <AnimatePresence>
                             {isOpen === providedData.title ? (
                                 <motion.div
-                                    initial={{ opacity: 0, height: '0%' }}
-                                    animate={{ opacity: 1, height: '100%' }}
-                                    exit={{ opacity: 0, height: '0%' }}
+                                    style={{ overflow: 'hidden' }}
+                                    initial={{ opacity: 0, height: '0px' }}
+                                    animate={{
+                                        opacity: 1,
+                                        height: 'max-content',
+                                    }}
+                                    exit={{ opacity: 0, height: '0px' }}
+                                    transition={{
+                                        layout: { duration: 0.5 },
+                                    }}
                                 >
                                     <section
                                         className="dangerous__content"
