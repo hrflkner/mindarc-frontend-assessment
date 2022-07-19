@@ -122,6 +122,8 @@ export default function Accordion2() {
 
                             {isOpen === providedData.title ? (
                                 <motion.div
+                                    // Accordion Animation
+                                    layoutId="accordion"
                                     style={{ overflow: 'hidden' }}
                                     initial={{ opacity: 0, height: '0px' }}
                                     animate={{
@@ -131,7 +133,7 @@ export default function Accordion2() {
                                     exit={{ opacity: 0, height: '0px' }}
                                     transition={{
                                         layout: { duration: 0.5 },
-                                        ease: 'easeOut',
+                                        ease: 'easeInOut',
                                     }}
                                 >
                                     <section

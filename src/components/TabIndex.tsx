@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 // Packages
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
 
 // Data
@@ -162,13 +162,22 @@ export default function TabIndex() {
                         );
                     })}
                 </div>
-                <motion.section
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="dangerous__content"
-                    dangerouslySetInnerHTML={{ __html: filteredHTMLString }}
-                ></motion.section>
+                <AnimatePresence exitBeforeEnter>
+                    <motion.div
+                        className="dangerous__content"
+                        key={tabIndex ? tabIndex : 'empty'}
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -20, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                    >
+                        <section
+                            dangerouslySetInnerHTML={{
+                                __html: filteredHTMLString,
+                            }}
+                        ></section>
+                    </motion.div>
+                </AnimatePresence>
             </section>
         </StyledTabIndex>
     );
