@@ -66,7 +66,7 @@ const StyledAccordion = styled.section`
         font-family: 'Oswald', sans-serif;
     }
     .dangerous__content {
-        margin: 1rem auto 0;
+        margin: 0 auto;
         padding: 2rem;
 
         /* Design */
@@ -108,18 +108,18 @@ export default function Accordion2() {
                 <h1>Provided Data Accordion:</h1>
                 {providedData.map((providedData) => (
                     <>
-                        <div
-                            id={providedData.title}
-                            className="accordion__selector"
-                            onClick={() => handleClick(providedData.title)}
-                        >
-                            <h2>{providedData.title}</h2>
-                            <span className="accordion__icon">
-                                {isOpen === providedData.title ? '-' : '+'}
-                            </span>
-                        </div>
-
                         <AnimatePresence>
+                            <motion.div
+                                id={providedData.title}
+                                className="accordion__selector"
+                                onClick={() => handleClick(providedData.title)}
+                            >
+                                <h2>{providedData.title}</h2>
+                                <span className="accordion__icon">
+                                    {isOpen === providedData.title ? '-' : '+'}
+                                </span>
+                            </motion.div>
+
                             {isOpen === providedData.title ? (
                                 <motion.div
                                     style={{ overflow: 'hidden' }}
@@ -131,6 +131,7 @@ export default function Accordion2() {
                                     exit={{ opacity: 0, height: '0px' }}
                                     transition={{
                                         layout: { duration: 0.5 },
+                                        ease: 'easeOut',
                                     }}
                                 >
                                     <section
